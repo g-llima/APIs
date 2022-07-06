@@ -1,4 +1,4 @@
-package main.java.com.gabriel.Models;
+package com.gabriel.Models;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.gabriel.geatsapi.Converters.ListToStringConverter;
+import com.gabriel.Converters.ListToStringConverter;
 
 import lombok.Data;
 

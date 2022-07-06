@@ -1,4 +1,4 @@
-package com.gabriel.geatsapi;
+package com.gabriel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

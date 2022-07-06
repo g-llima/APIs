@@ -1,4 +1,4 @@
-package main.java.com.gabriel.Converters;
+package com.gabriel.Converters;
 
 import java.util.Arrays;
 import java.util.Collections;
