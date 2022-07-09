@@ -46,17 +46,20 @@ public class ProductControllers {
 
     @PutMapping("/{id}")
     public String updateUser(@PathVariable long id, @RequestBody Product product) {
-        Product updatedProduct = productRepo.findById(id).get();
-        updatedProduct.setCalories(product.getCalories());
-        updatedProduct.setImg_url(product.getImg_url());
-        updatedProduct.setPrice(product.getPrice());
-        updatedProduct.setProduct_name(product.getProduct_name());
-        updatedProduct.setQuantity(product.getQuantity());
-        updatedProduct.setVeg(product.isVeg());
+        Product updatedProduct = null;
+        if (productRepo.findById(id).isPresent()) {
+            updatedProduct.setCalories(product.getCalories());
+            updatedProduct.setImg_url(product.getImg_url());
+            updatedProduct.setPrice(product.getPrice());
+            updatedProduct.setProduct_name(product.getProduct_name());
+            updatedProduct.setQuantity(product.getQuantity());
+            updatedProduct.setVeg(product.isVeg());
 
-        productRepo.save(updatedProduct);
+            productRepo.save(updatedProduct);
+            return "Updated...";
+        }
 
-        return "Updated...";
+        return "Not found";
     }
 
     @DeleteMapping("/{id}")
